@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF8D6;
+    color: #403A50;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #B1A9DA 0%,
+        #D6D0E9 45%,
+        #FFEDA8 100%
+    );
+    padding: 35px 20px;
+    text-align: center;
+    border-bottom: 4px solid #F7E58A;
+}
+
+.header-content h1 {
+    font-size: 32px;
+    color: #403A50;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #5C5670;
+}
+
+/* ================= MAIN ================= */
+
+main {
+    padding: 40px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    margin: auto;
+    background: #FFFEF7;
+    padding: 32px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(177, 169, 218, 0.25),
+        0 4px 10px rgba(255, 237, 168, 0.35);
+}
+
+.container h2 {
+    text-align: center;
+    color: #403A50;
+    margin-bottom: 25px;
+}
+
+/* ================= FORM ================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 14px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #514B61;
+}
+
+input {
+    padding: 13px 14px;
+    border: 2px solid #D1CBE5;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: #403A50;
+
+    background: #FFFBEA;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #B1A9DA;
+    box-shadow: 0 0 0 3px rgba(177, 169, 218, 0.18);
+}
+
+/* ================= BUTTON ================= */
+
+button {
+    margin-top: 25px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #B1A9DA;
+    color: #403A50;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #FFEDA8;
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(177, 169, 218, 0.25);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ================= RESULT ================= */
+
+.result {
+    margin-top: 30px;
+    padding-top: 25px;
+
+    border-top: 2px solid #FFEDA8;
+}
+
+.result > p {
+    margin: 9px 0;
+    color: #514B61;
+}
+
+/* ================= RISK CARDS ================= */
+
+.risk {
+    margin-top: 22px;
+    padding: 22px;
+
+    border-radius: 15px;
+    text-align: center;
+}
+
+.risk h2 {
+    margin-bottom: 10px;
+}
+
+/* HIGH RISK */
+
+.high {
+    background: #F4E3E8;
+    border: 2px solid #D7B8C4;
+}
+
+/* MEDIUM RISK */
+
+.medium {
+    background: #FFEDA8;
+    border: 2px solid #E8D77A;
+}
+
+/* LOW RISK */
+
+.low {
+    background: #E8E4F5;
+    border: 2px solid #B1A9DA;
+}
+
+/* ================= SAFETY ================= */
+
+.safety {
+    margin-top: 22px;
+    padding: 20px;
+
+    background: #FFF4B8;
+
+    border-left: 5px solid #B1A9DA;
+    border-radius: 12px;
+}
+
+.safety h3 {
+    margin-bottom: 12px;
+    color: #403A50;
+}
+
+.safety ul {
+    padding-left: 10px;
+}
+
+.safety li {
+    margin: 9px 0 9px 18px;
+    color: #514B61;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: #B1A9DA;
+    color: #403A50;
+
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .header-content h1 {
+        font-size: 24px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 94%;
+        padding: 22px;
+    }
+
+    main {
+        padding: 25px 0;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

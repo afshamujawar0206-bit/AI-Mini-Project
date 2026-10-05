@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Disaster Early Warning System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>🚨 AI Disaster Early Warning System</h1>
+
+            <p>
+                AI-Based Environmental Risk Monitoring System
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="container">
+
+            <h2>Enter Environmental Data</h2>
+
+            <form action="/predict" method="POST">
+
+                <label>📍 Location</label>
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Enter your location"
+                    required
+                >
+
+
+                <label>🌧 Rainfall (mm)</label>
+
+                <input
+                    type="number"
+                    name="rainfall"
+                    step="0.1"
+                    placeholder="Enter rainfall"
+                    required
+                >
+
+
+                <label>💧 Water Level</label>
+
+                <input
+                    type="number"
+                    name="water_level"
+                    step="0.1"
+                    placeholder="Enter water level"
+                    required
+                >
+
+
+                <label>💨 Wind Speed (km/h)</label>
+
+                <input
+                    type="number"
+                    name="wind_speed"
+                    step="0.1"
+                    placeholder="Enter wind speed"
+                    required
+                >
+
+
+                <button type="submit">
+                    CHECK RISK
+                </button>
+
+            </form>
+
+
+            {% if prediction %}
+
+            <div class="result">
+
+                <h2>Prediction Result</h2>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ location }}
+                </p>
+
+                <p>
+                    <strong>Rainfall:</strong>
+                    {{ rainfall }} mm
+                </p>
+
+                <p>
+                    <strong>Water Level:</strong>
+                    {{ water_level }}
+                </p>
+
+                <p>
+                    <strong>Wind Speed:</strong>
+                    {{ wind_speed }} km/h
+                </p>
+
+
+                {% if prediction == "High" %}
+
+                <div class="risk high">
+
+                    <h2>🚨 HIGH RISK</h2>
+
+                    <p>{{ message }}</p>
+
+                    <strong>{{ warning }}</strong>
+
+                </div>
+
+
+                {% elif prediction == "Medium" %}
+
+                <div class="risk medium">
+
+                    <h2>⚠️ MEDIUM RISK</h2>
+
+                    <p>{{ message }}</p>
+
+                    <strong>{{ warning }}</strong>
+
+                </div>
+
+
+                {% else %}
+
+                <div class="risk low">
+
+                    <h2>✅ LOW RISK</h2>
+
+                    <p>{{ message }}</p>
+
+                    <strong>{{ warning }}</strong>
+
+                </div>
+
+                {% endif %}
+
+
+                <div class="safety">
+
+                    <h3>🛡 Safety Instructions</h3>
+
+                    <ul>
+
+                        <li>Stay updated with official alerts.</li>
+
+                        <li>Keep emergency supplies ready.</li>
+
+                        <li>Avoid unsafe or flooded areas.</li>
+
+                        <li>Follow instructions from local authorities.</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            AI-Based 30-Minute Disaster Early Warning System
+        </p>
+
+        <p>
+            College AI Project
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
